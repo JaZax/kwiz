@@ -3,13 +3,22 @@ import ReactDOM from 'react-dom'
 import { gsap } from 'gsap'
 
 import './style.scss'
-import Placeholder from './components/Placeholder'
+import Header from './components/header'
+import Question from './components/question'
+import Option from './components/option'
 
 const App = () => {
 
     return (
         <div className="App" >
-            <Placeholder />
+            <Header />
+            <Question/>
+            <div id="optionWrap">
+                <Option/>
+                <Option/>
+                <Option/>
+                <Option/>
+            </div>
         </div>
     )
 }
