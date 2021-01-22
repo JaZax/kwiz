@@ -3,7 +3,7 @@ import React from 'react'
 const Question = () => {
 
     return (
-        <h1 className="placeholder">placeholder</h1>
+        <h1 className="placeholder">some random question</h1>
     )
 }
 
