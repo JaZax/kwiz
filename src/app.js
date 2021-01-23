@@ -13,7 +13,11 @@ class App extends React.Component {
     constructor(props){
         super(props)
 
-        this.state = JSON.parse(JSON.stringify(questions))
+        this.questions = JSON.parse(JSON.stringify(questions))
+        this.addedState = {currentQ : 1}
+
+        this.state = {...this.questions, ...this.addedState}
+        
     }
 
     render() {
@@ -26,10 +30,10 @@ class App extends React.Component {
                     <Header />
                     <Question/>
                     <div id="optionWrap">
-                        <Option/>
-                        <Option/>
-                        <Option/>
-                        <Option/>
+                        <Option id="1"/>
+                        <Option id="2"/>
+                        <Option id="3"/>
+                        <Option id="4"/>
                     </div>
                 </div>
             </Context.Provider>

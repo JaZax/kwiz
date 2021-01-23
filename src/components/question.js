@@ -5,8 +5,10 @@ const Question = () => {
     
     let ctx = useContext(Context)
 
+    console.log(ctx)
+
     return (
-        <h1 className="placeholder">{ctx.questions[1].content}</h1>
+        <div id="question">{ctx.questions[1].content}</div>
     )
 }
 
