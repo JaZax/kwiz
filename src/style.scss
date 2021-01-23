@@ -1,6 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
 body{
     margin: 0;
     padding: 0;
     background: #0f0f0f;
     color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    #App{
+        height: 100vh;
+        .accent{
+            color: #fc0255;
+        }
+        #header{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+        #wrap{
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            #question{
+                width: 100%;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #optionWrap{
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                .option{
+                    width: 100%;
+                    font-size: 35px;
+                    height: 20vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+       
+    }
+    
 }

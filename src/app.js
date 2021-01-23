@@ -26,14 +26,17 @@ class App extends React.Component {
 
         return (
             <Context.Provider value={this.state}>
+             
                 <div className="App" >
-                    <Header />
-                    <Question/>
-                    <div id="optionWrap">
-                        <Option id="1"/>
-                        <Option id="2"/>
-                        <Option id="3"/>
-                        <Option id="4"/>
+                <Header />
+                    <div id="wrap">
+                        <Question/>
+                        <div id="optionWrap">
+                            <Option id="1"/>
+                            <Option id="2"/>
+                            <Option id="3"/>
+                            <Option id="4"/>
+                        </div>
                     </div>
                 </div>
             </Context.Provider>
