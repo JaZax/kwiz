@@ -1,34 +1,21 @@
-import React, { useContext } from 'react'
+import React, {useContext} from 'react'
 import Context from './../context'
 
-class Option extends React.Component {
+const Option = (props) => {
+    let ctx = useContext(Context)
 
-    constructor(props){
-        super(props)
-
-        this.elRef = React.createRef()
+    function handleClick() {
+        let ctxCopy = JSON.parse(JSON.stringify(ctx.state))
+        ctxCopy.currentQ = 2
+        ctx.updateState(ctxCopy)
+        console.log(ctx)
     }
 
-    componentDidMount(){
-        this.elRef.current.addEventListener('click', ()=>{
-            console.log('elo')
-        })
-    }
+    console.log(ctx.state.questions[ctx.state.currentQ].answers[props.id])
 
-    componentWillUnmount(){
-        this.elRef.current.removeEventListener('click', null)
-    }
-
-    render() {
-        return (
-          <Context.Consumer>
-            {(ctx) => {
-
-                return <h1 className="option" ref={this.elRef}>{ctx.questions[ctx.currentQ].answers[this.props.id]}</h1>
-            }}
-          </Context.Consumer>
-        )
-      }
+    return (
+        <h1 onClick={handleClick} className="option">{ctx.state.questions[ctx.state.currentQ].answers[props.id]}</h1>
+    )
 }
 
 export default Option

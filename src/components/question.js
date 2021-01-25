@@ -5,10 +5,8 @@ const Question = () => {
     
     let ctx = useContext(Context)
 
-    console.log(ctx)
-
     return (
-        <div id="question">{ctx.questions[ctx.currentQ].content}</div>
+        <h1>{ctx.state.questions[ctx.state.currentQ].content}</h1>
     )
 }
 

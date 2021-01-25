@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ReactDOM from 'react-dom'
 
 import Context from './context'
@@ -9,39 +9,33 @@ import Header from './components/header'
 import Question from './components/question'
 import Option from './components/option'
 
-class App extends React.Component {
-    constructor(props){
-        super(props)
+// THX https://mindsers.blog/en/updating-react-context-from-consumer/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-        this.questions = JSON.parse(JSON.stringify(questions))
-        this.addedState = {currentQ : 3}
+const App = () => {
 
-        this.state = {...this.questions, ...this.addedState}
-        
-    }
+    let Questions = JSON.parse(JSON.stringify(questions))
+    let addedState = {currentQ : 1}
+    let join = {...Questions, ...addedState}
 
-    render() {
+    const [state, updateState] = useState(join)
 
-        console.log(this.state)
-
-        return (
-            <Context.Provider value={this.state}>
-             
-                <div className="App" >
-                <Header />
-                    <div id="wrap">
+    return(
+        <Context.Provider value={{state, updateState}}>
+             <div className="App" >
+                 <Header />
+                     <div id="wrap">
                         <Question/>
                         <div id="optionWrap">
-                            <Option id="1"/>
-                            <Option id="2"/>
-                            <Option id="3"/>
-                            <Option id="4"/>
+                             <Option id="1"/>
+                             <Option id="2"/>
+                             <Option id="3"/>
+                             <Option id="4"/>                       
                         </div>
                     </div>
-                </div>
-            </Context.Provider>
-        )
-    }
+             </div>
+        </Context.Provider>
+    )
+
 }
 
 ReactDOM.render(<App />, document.getElementById('App'))
