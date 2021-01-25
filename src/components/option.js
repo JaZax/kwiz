@@ -23,7 +23,8 @@ class Option extends React.Component {
         return (
           <Context.Consumer>
             {(ctx) => {
-                return <h1 className="option" ref={this.elRef}>{ctx.questions[1].answers[this.props.id]}</h1>
+
+                return <h1 className="option" ref={this.elRef}>{ctx.questions[ctx.currentQ].answers[this.props.id]}</h1>
             }}
           </Context.Consumer>
         )

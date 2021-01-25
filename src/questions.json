@@ -4,10 +4,10 @@
             "content" : "this is a serious question",
             "correct" : "2",
             "answers" : {
-                "1" : "a",
-                "2" : "b",
-                "3" : "c",
-                "4" : "d"
+                "1" : "1",
+                "2" : "2",
+                "3" : "3",
+                "4" : "4"
             }
         },
         "2" : {
@@ -24,10 +24,10 @@
             "content" : "cvnbcvbncvbn",
             "correct" : "1",
             "answers" : {
-                "1" : "a",
-                "2" : "b",
-                "3" : "c",
-                "4" : "d"
+                "1" : "f",
+                "2" : "g",
+                "3" : "h",
+                "4" : "j"
             }
         }
     }

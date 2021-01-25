@@ -14,7 +14,7 @@ class App extends React.Component {
         super(props)
 
         this.questions = JSON.parse(JSON.stringify(questions))
-        this.addedState = {currentQ : 1}
+        this.addedState = {currentQ : 3}
 
         this.state = {...this.questions, ...this.addedState}
         

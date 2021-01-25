@@ -8,7 +8,7 @@ const Question = () => {
     console.log(ctx)
 
     return (
-        <div id="question">{ctx.questions[1].content}</div>
+        <div id="question">{ctx.questions[ctx.currentQ].content}</div>
     )
 }
 
