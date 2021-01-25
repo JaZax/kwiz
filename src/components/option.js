@@ -1,15 +1,22 @@
 import React, { useContext } from 'react'
 import Context from './../context'
 
-const Option = (props) => {
+class Option extends React.Component {
 
-    let ctx = useContext(Context)
+    constructor(props){
+        super(props)
+    }
 
-    console.log(ctx.questions[1].answers[props.id])
 
-    return (
-        <div className="option">{ctx.questions[1].answers[props.id]}</div>
-    )
+    render() {
+        return (
+          <Context.Consumer>
+            {(ctx) => {
+                return <h1 id="option">{ctx.questions[1].answers[this.props.id]}</h1>
+            }}
+          </Context.Consumer>
+        )
+      }
 }
 
 export default Option
