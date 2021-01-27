@@ -4,17 +4,28 @@ import Context from './../context'
 const Option = (props) => {
     let ctx = useContext(Context)
 
-    function handleClick() {
+    function checkIfCorrect(clicked){
         let ctxCopy = JSON.parse(JSON.stringify(ctx.state))
-        ctxCopy.currentQ = 2
+        let correct = ctx.state.questions[ctx.state.currentQ].correct
+
+        if(clicked.id == correct){
+            console.log('elo')
+            ctxCopy.points++ 
+            ctxCopy.currentQ++
+        }
+
+        console.log(ctxCopy.points)
+
         ctx.updateState(ctxCopy)
-        console.log(ctx)
     }
 
-    console.log(ctx.state.questions[ctx.state.currentQ].answers[props.id])
+    function handleClick(e) {
+        checkIfCorrect(e.target)
+        //console.log(ctx)
+    }
 
     return (
-        <h1 onClick={handleClick} className="option">{ctx.state.questions[ctx.state.currentQ].answers[props.id]}</h1>
+        <h1 id={props.id} onClick={handleClick} className="option">{ctx.state.questions[ctx.state.currentQ].answers[props.id]}</h1>
     )
 }
 

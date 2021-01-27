@@ -14,7 +14,7 @@ import Option from './components/option'
 const App = () => {
 
     let Questions = JSON.parse(JSON.stringify(questions))
-    let addedState = {currentQ : 1}
+    let addedState = {currentQ : 1, points: 0,}
     let join = {...Questions, ...addedState}
 
     const [state, updateState] = useState(join)
