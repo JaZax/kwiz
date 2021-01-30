@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import Context from './../context'
 
-const Question = () => {
+const Points = () => {
     
     let ctx = useContext(Context)
 
     return (
-        <div id="question">{ctx.state.questions[ctx.state.currentQ].content}</div>
+        <div id="points">{ctx.state.points}</div>
     )
 }
 
-export default Question
+export default Points

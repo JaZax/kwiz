@@ -5,9 +5,9 @@ import Context from './context'
 import questions from './questions.json'
 
 import './style.scss'
-import Header from './components/header'
 import Question from './components/question'
 import Option from './components/option'
+import Points from './components/points'
 
 // THX https://mindsers.blog/en/updating-react-context-from-consumer/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -21,18 +21,16 @@ const App = () => {
 
     return(
         <Context.Provider value={{state, updateState}}>
-             <div className="App" >
-                 <Header />
-                     <div id="wrap">
-                        <Question/>
-                        <div id="optionWrap">
-                             <Option id="1"/>
-                             <Option id="2"/>
-                             <Option id="3"/>
-                             <Option id="4"/>                       
-                        </div>
-                    </div>
-             </div>
+            <div id="topWrap">
+                <Points/>
+                <Question/>
+            </div>
+            <div id="optionWrap">
+                <Option id="1"/>
+                <Option id="2"/>
+                <Option id="3"/>
+                <Option id="4"/>                       
+            </div>
         </Context.Provider>
     )
 
