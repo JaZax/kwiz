@@ -7,6 +7,7 @@ import questions from './questions.json'
 import './style.scss'
 import Question from './components/question'
 import Option from './components/option'
+import End from './components/end'
 
 // THX https://mindsers.blog/en/updating-react-context-from-consumer/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -16,10 +17,16 @@ const App = () => {
     let addedState = {currentQ : 1, points: 0,}
     let join = {...Questions, ...addedState}
 
+    let qNumber = Object.keys(join).length
+
     const [state, updateState] = useState(join)
+    let end
+
+    if(qNumber + 1 == state.currentQ) {end = <End/>} else {end = null}
 
     return(
         <Context.Provider value={{state, updateState}}>
+            {end}
             <div id="topWrap">
                 <Question/>
             </div>

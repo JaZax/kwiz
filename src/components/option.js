@@ -9,8 +9,9 @@ const Option = (props) => {
         let correct = ctx.state.questions[ctx.state.currentQ].correct
 
         if(clicked.id == correct){
-            console.log('elo')
             ctxCopy.points++ 
+            ctxCopy.currentQ++
+        }else{
             ctxCopy.currentQ++
         }
 
