@@ -7,7 +7,6 @@ import questions from './questions.json'
 import './style.scss'
 import Question from './components/question'
 import Option from './components/option'
-import Points from './components/points'
 
 // THX https://mindsers.blog/en/updating-react-context-from-consumer/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -21,10 +20,7 @@ const App = () => {
 
     return(
         <Context.Provider value={{state, updateState}}>
-            <div id="topWrap">
-                <Points/>
-                <Question/>
-            </div>
+            <Question/>
             <div id="optionWrap">
                 <Option id="1"/>
                 <Option id="2"/>

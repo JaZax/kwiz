@@ -2,7 +2,7 @@
 
 $bgColor : #a1c5c2;
 $textColor: #468189;
-$optColor: rgb(167, 216, 207);
+$textColorD: #2b5c62;
 
 body{
     margin: 0;
@@ -13,29 +13,30 @@ body{
 
     #App{
         height: 100vh;
-        #topWrap{
+        #question{
+            height: 50vh;
+            font-size: 6vw;
             display: flex;
-            height: 35vh;
-            #points{
-            }
-            #question{
-                font-size: 6em;
-            }
+            justify-content: center;
+            align-items: center;
         }
-        
         #optionWrap{
-            height: 65vh;
+            height: 50vh;
             display: grid;
-            grid-template-columns: 1fr 1fr ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             .option{
                 background: $textColor;
                 color: $bgColor;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 6em;
+                font-size: 6vw;
                 margin: 0;
                 user-select: none;
+                transition: background 300ms;
+                &:hover{
+                    background: $textColorD;
+                }
             }
         }
     }
