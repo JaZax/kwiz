@@ -20,7 +20,9 @@ const App = () => {
 
     return(
         <Context.Provider value={{state, updateState}}>
-            <Question/>
+            <div id="topWrap">
+                <Question/>
+            </div>
             <div id="optionWrap">
                 <Option id="1"/>
                 <Option id="2"/>
